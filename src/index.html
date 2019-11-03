@@ -13,18 +13,18 @@
     <main>
         <div class="main-content">
             <div class="main-content__top">
-                <input type="text" name="search-title" id="search-title" class="main-content__top-input" placeholder="search by title">
-                <select name="task_status" id="search-status">
-                    <option value="all" selected>all</option>
-                    <option value="open">open</option>
-                    <option value="done">done</option>
-                </select>
-                <select name="task_priority" id="search-priority">
-                    <option value="all" selected>all</option>
-                    <option value="high">high</option>
-                    <option value="normal">normal</option>
-                    <option value="low">low</option>
-                </select>
+                    <input type="text" name="search-title" id="search-title" class="main-content__top-input" placeholder="search by title">
+                    <select name="task_status" id="search-status">
+                        <option value="all" selected>all</option>
+                        <option value="open">open</option>
+                        <option value="done">done</option>
+                    </select>
+                    <select name="task_priority" id="search-priority">
+                        <option value="all" selected>all</option>
+                        <option value="high">high</option>
+                        <option value="normal">normal</option>
+                        <option value="low">low</option>
+                    </select>
                 <button id="open-form-btn" class="btn">Create</button>
             </div>
             <div id="area" class="main-content__area"></div>
@@ -52,6 +52,7 @@
                             <div class="modal-btns">
                                 <button id="close-form-btn" class="btn btn-form">Cancel</button>
                                 <button id="create-task-btn" class="btn btn-form">Save</button>
+                                <button id="update-task-btn" class="btn btn-form hidden">Save</button>
                             </div>
                         </div>
                     </form>

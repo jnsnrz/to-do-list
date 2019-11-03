@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function()  {
   const openFormBtn = document.querySelector('#open-form-btn');
   const closeFormBtn = document.querySelector('#close-form-btn');
   const createTaskBtn = document.querySelector('#create-task-btn');
+  const updateTaskBtn = document.querySelector('#update-task-btn');
   const newTaskForm = document.querySelector('#new-task-form');
 
   // filter section
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function()  {
   openFormBtn.addEventListener('click', openForm);
   closeFormBtn.addEventListener('click', cancel);
   createTaskBtn.addEventListener('click', createTask);
-
+ 
 
   searchTitle.addEventListener('input', (e) => {
     let found = tasks.filter((obj) => {
@@ -272,19 +273,40 @@ document.addEventListener('DOMContentLoaded', function()  {
    * Updates task
    *
    */
-  function updateTask(item) {
-    openForm();
+  // function updateTask(item) {
+  //   updateTaskBtn.classList.remove('hidden');
+  //   createTaskBtn.classList.add('hidden');
 
-    console.log(item);
-    
-    let formData =  new FormData(newTaskForm);
+  //   overlay.classList.remove('hidden');
+  //   modal.classList.remove('hidden');
 
-    formData.set('title', item.getTitle());
-    formData.set('description', item.getDescription());
-    formData.set('priority', item.getPriority());
+  //   openForm();
 
-    console.log(formData.values());
-  };
+  //   document.forms['new-task-form'].elements['title'].value = item.getTitle();
+  //   document.forms['new-task-form'].elements['description'].value = item.getDescription();
+  //   document.forms['new-task-form'].elements['task_priority'].value = item.getPriority();
+
+
+  //   updateTaskBtn.addEventListener('click', (e) => {
+  //     e.preventDefault();
+
+  //     let index = tasks.findIndex((el) => {
+  //       return el === item;
+  //     });
+
+  //     tasks[index].setTitle(document.forms['new-task-form'].elements['title'].value); 
+  //     tasks[index].setDescription( document.forms['new-task-form'].elements['description'].value); 
+  //     tasks[index].setPriority(document.forms['new-task-form'].elements['task_priority'].value); 
+
+  //     console.log(tasks[index]);
+      
+  //     updateArea();
+  //     cancel();
+  //   });
+
+  // };
+
+
   
   
   /**
@@ -294,6 +316,9 @@ document.addEventListener('DOMContentLoaded', function()  {
   function openForm() {
     overlay.classList.remove('hidden');
     modal.classList.remove('hidden');
+
+    updateTaskBtn.classList.add('hidden');
+    createTaskBtn.classList.remove('hidden');
   }
   
   
