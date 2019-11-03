@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To do app</title>
+</head>
+<body>
+    <header>
+        <h1>TODOList</h1>
+    </header>
+    <main>
+        <div class="main-content">
+            <div class="main-content__top">
+                <input type="text" name="search-title" id="search-title" class="main-content__top-input" placeholder="search by title">
+                <select name="task_status" id="search-status">
+                    <option value="all" selected>all</option>
+                    <option value="open">open</option>
+                    <option value="done">done</option>
+                </select>
+                <select name="task_priority" id="search-priority">
+                    <option value="all" selected>all</option>
+                    <option value="high">high</option>
+                    <option value="normal">normal</option>
+                    <option value="low">low</option>
+                </select>
+                <button id="open-form-btn" class="btn">Create</button>
+            </div>
+            <div id="area" class="main-content__area"></div>
+            <!-- OVERLAY AND MODAL -->
+            <div class="modal hidden">
+                <div class="modal-content">
+                    <form id="new-task-form" name="new-task" onsubmit="return false">
+                        <div class="form-element">
+                            <label for="title">Title:*</label>
+                            <input type="text" name="title" placeholder="title">
+                        </div>
+                        <div class="form-element">
+                            <label for="description">Description:*</label>
+                            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="form-element">
+                            <label for="task_priority">Priority:</label>
+                            <select name="task_priority" id="priority">
+                                <option value="high" selected>High</option>
+                                <option value="normal">Normal</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                        <div class="form-element">
+                            <div class="modal-btns">
+                                <button id="close-form-btn" class="btn btn-form">Cancel</button>
+                                <button id="create-task-btn" class="btn btn-form">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="overlay hidden"></div>
+            <!-- /  OVERLAY AND MODAL -->
+        </div>
+    </main>  
+    <footer>
+        <p>Yevheniia Shabalova</p>
+    </footer>  
+    <!-- <script src="dist/bundle.js"></script> -->
+</body>
+</html>
